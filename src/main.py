@@ -1,18 +1,17 @@
-from openai import OpenAI
+from copilot import Copilot
 import time
 import os
 from dotenv import load_dotenv
 
-# Define sua chave de API (assegure-se de tê-la configurada na variável de ambiente ou insira-a diretamente, 
-# embora não seja recomendado deixar a chave exposta no código)
+# Define sua chave de API (assegure-se de tê-la configurada na variável de ambiente)
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Copilot(api_key=os.getenv("COPILOT_API_KEY"))
 
 def upload_file(file_path):
     """
-    Faz o upload do arquivo para a OpenAI e retorna o id do arquivo.
+    Faz o upload do arquivo para o Copilot e retorna o id do arquivo.
     """
     with open(file_path, "rb") as f:
         response = client.files.create(
@@ -27,7 +26,10 @@ def start_fine_tune(training_file_id):
     Inicia o treinamento (fine-tuning) utilizando o id do arquivo.
     Retorna o id do job de fine-tuning.
     """
-    response = client.fine_tunes.create(training_file=training_file_id)
+    response = client.fine_tuning.jobs.create(
+        training_file=training_file_id,
+        model="copilot-turbo"  # Altere para o modelo desejado
+    )
 
     print("Job de fine-tuning iniciado. ID do job:", response.id)
     return response.id
