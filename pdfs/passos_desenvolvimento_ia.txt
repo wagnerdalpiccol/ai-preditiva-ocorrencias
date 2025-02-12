@@ -1,0 +1,34 @@
+1. Dados históricos
+ - acidentes
+ - quase acidentes
+ - incidentes
+ - * registros de ocorrências, relatórios de inspeção, dados de manutenção etc...
+ - auditorias
+
+2. Dados operacionais
+ - sensores
+ - câmeras
+ - * fontes de monitoramento em tempo real.
+
+3. Preparação dos dados 
+ - limpeza de dados garantindo a consistência, completando lacunas e eliminado registros duplicados.
+ - análise estatística e visualização para identificar padrões, correlações e variáveis.
+ - indicadores (condições ambientais, falhas de equipamento, comportamentos operacionais) usados para treinar o modelo.
+
+4. Desenvolvimento dos modelos preditivos
+ - regressão logística, árvores de decisão, random forest ou redes neurais.
+ - * escrever código python, leitura de arquivo excel, json...
+ - treinamento
+ - acurácia, precisão, recall e F1-score
+ - ajuste os parâmetros do modelo para melhorar sua performance e confiabilidade
+
+5. Prática
+ - Envolva especialistas em segurança do trabalho para validar se as predições fazem sentido na prática.
+ - Integração com Sistemas de Monitoramento
+ - Configure alertas automáticos para que, ao detectar um padrão de risco, as equipes responsáveis sejam notificadas imediatamente para tomar medidas preventivas.
+ - monitore continuamente o desempenho do modelo e a eficácia das intervenções.
+ - atualize os modelos com dados novos e feedback operacional para que as predições fiquem cada vez mais precisas.
+
+
+
+
